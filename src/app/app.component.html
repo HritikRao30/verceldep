@@ -1,0 +1,115 @@
+<!-- <div>
+  <div>
+    <h1>Hello world</h1>
+    <h2>Password Generator</h2>
+  </div>
+  <div>
+    <div class="field">
+      <label class="label">Length</label>
+      <p class="control has-icons-left has-icons-right">
+        <input class="input" type="text" placeholder="length" type="text" (input)="getLength($event)">
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </p>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <input type="checkbox" (change)="changeLetters()">
+          use letters
+        </label>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <input type="checkbox" (change)="changeNumbers()">
+          use numbers
+        </label>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <input type="checkbox" (change)="changeSymbols()">
+          use symbols
+        </label>
+      </div>
+    </div>
+
+
+    <div class="control">
+      <button class="button is-link"  [disabled]="disableButton()" (click)="generatePassword()">Generate</button>
+    </div>
+
+  </div>
+  <div class="field">
+    <p class="control has-icons-left">
+      <input class="input" type="text" [value]="password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+  </div>
+</div> -->
+
+
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
+
+      <div class="field">
+        <label>Length</label>
+        <input class="input" (input)="getLength($event)" />
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="changeLetters()" type="checkbox" />
+            Use Letters
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="changeNumbers()" type="checkbox" />
+            Use Numbers
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="changeSymbols()" type="checkbox" />
+            Use Symbols
+          </label>
+        </div>
+      </div>
+
+      <button [disabled]="disableButton()" (click)="generatePassword()" class="button is-link is-fullwidth">
+        Generate!
+      </button>
+
+      <div class="box">
+        <label>Your Password</label>
+        <input class="input" [value]="password" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
